@@ -150,9 +150,30 @@
             'Q',
             'K'
           ];
+          let randomSuit = suits[getRandomIndex(suits.length)];
+          let randomValue = values[getRandomIndex(values.length)];
+          let newCard = { suit: randomSuit, value: randomValue };
+          setDisplayed([...displayed, newCard]);
 
 
-      }
+      };
+
+      let handleCardClick = (index) => {
+          if (pickedIndex === null) {
+            setPickedIndex(index);
+          } else if (pickedIndex === index) {
+            setPickedIndex(null);
+          } else {
+            let newDisplayed = [...displayed];
+            [newDisplayed[pickedIndex], newDisplayed[index]] = [
+              newDisplayed[index],
+              newDisplayed[pickedIndex]
+            ];
+            setDisplayed(newDisplayed);
+            setPickedIndex(null);
+          }
+        };
+    };
 
 
 
