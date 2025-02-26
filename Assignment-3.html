@@ -39,6 +39,15 @@
         <script type="text/babel">
             const { useState } = React;
 
+            let Card = ({ card, isPicked, onClick }) => {
+        return (
+          <div className={`card ${isPicked ? 'picked' : ''}`} onClick={onClick}>
+            <div className="card-value">{card.value}</div>
+            <div className="card-suit">{card.suit}</div>
+          </div>
+        );
+      };
+
             const App = () => {
         // Function to generate a standard deck of 52 cards.
         const createDeck = () => {
