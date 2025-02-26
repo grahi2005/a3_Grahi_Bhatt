@@ -110,6 +110,12 @@
           setDisplayed(dealtCards);
         };
 
+        let handleReset = () => {
+          setDeck([...deck, ...displayed]);
+          setDisplayed([]);
+          setPickedIndex(null);
+        };
+
       }
 
 
