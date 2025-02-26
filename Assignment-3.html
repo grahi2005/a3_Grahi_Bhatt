@@ -95,6 +95,21 @@
           setDisplayed([...displayed, selectedCard]);
         };
 
+        let dealCards = (count) => {
+          let newDeck = [...deck, ...displayed];
+          setDisplayed([]);
+          setPickedIndex(null);
+          let dealtCards = [];
+          for (let i = 0; i < count; i++) {
+            if (newDeck.length === 0) break;
+            let randomIndex = getRandomIndex(newDeck.length);
+            dealtCards.push(newDeck[randomIndex]);
+            newDeck.splice(randomIndex, 1);
+          }
+          setDeck(newDeck);
+          setDisplayed(dealtCards);
+        };
+
       }
 
 
