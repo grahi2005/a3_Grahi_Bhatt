@@ -39,6 +39,37 @@
         <script type="text/babel">
             const { useState } = React;
 
+            const App = () => {
+        // Function to generate a standard deck of 52 cards.
+        const createDeck = () => {
+          const suits = ['♥', '♦', '♣', '♠'];
+          const values = [
+            'A',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '7',
+            '8',
+            '9',
+            '10',
+            'J',
+            'Q',
+            'K'
+          ];
+          let deck = [];
+          suits.forEach((suit) => {
+            values.forEach((value) => {
+              deck.push({ suit, value });
+            });
+          });
+          return deck;
+        };
+      }
+
+
+
       
      
 
