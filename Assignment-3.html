@@ -124,6 +124,15 @@
           setPickedIndex(null);
         };
 
+        let handleRegroup = () => {
+          let shuffled = [...displayed];
+          for (let i = shuffled.length - 1; i > 0; i--) {
+            let j = getRandomIndex(i + 1);
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+          }
+          setDisplayed(shuffled);
+        };
+
       }
 
 
