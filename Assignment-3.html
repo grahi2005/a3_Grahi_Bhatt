@@ -80,6 +80,16 @@
         let [displayed, setDisplayed] = useState([]);
         let [pickedIndex, setPickedIndex] = useState(null);
 
+        let handleDeckClick = () => {
+          if (deck.length === 0) return;
+          let randomIndex = getRandomIndex(deck.length);
+          let selectedCard = deck[randomIndex];
+          let newDeck = [...deck];
+          newDeck.splice(randomIndex, 1);
+          setDeck(newDeck);
+          setDisplayed([...displayed, selectedCard]);
+        };
+
       }
 
 
