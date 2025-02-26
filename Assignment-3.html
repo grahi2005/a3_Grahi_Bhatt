@@ -116,6 +116,14 @@
           setPickedIndex(null);
         };
 
+        let handleToss = () => {
+          if (pickedIndex === null) return;
+          let newDisplayed = [...displayed];
+          newDisplayed.splice(pickedIndex, 1);
+          setDisplayed(newDisplayed);
+          setPickedIndex(null);
+        };
+
       }
 
 
