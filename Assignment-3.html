@@ -80,6 +80,11 @@
         let [displayed, setDisplayed] = useState([]);
         let [pickedIndex, setPickedIndex] = useState(null);
 
+
+        let getRandomIndex = (arrayLength) =>
+          Math.floor(Math.random() * arrayLength);
+
+
         let handleDeckClick = () => {
           if (deck.length === 0) return;
           let randomIndex = getRandomIndex(deck.length);
